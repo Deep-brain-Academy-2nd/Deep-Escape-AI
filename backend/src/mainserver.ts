@@ -6,6 +6,7 @@ import { MongoConnector } from './mongo-connector';
 import videoRouter from './routes/videoRouter';
 import userRouter from './routes/userRouter';
 import themeRouter from './routes/themeRouter';
+import studioRouter from './routes/studioRouter';
 
 // 메인서버 클래스
 export class MainServer {
@@ -28,6 +29,7 @@ export class MainServer {
 		this.app.use("/video", videoRouter);
 		this.app.use("/user", userRouter);
 		this.app.use("/theme", themeRouter);
+		this.app.use("/studio", studioRouter);
     this.app.get('/', (req: Request, res: Response) => {
       res.send('Hello World');
     });

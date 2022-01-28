@@ -52,8 +52,7 @@ router.post('/login', async (req, res) => {
         }, process.env.SECRET_KEY || 'secret_key', {
             expiresIn: '600m'
         });
-        console.log('user 있음');
-        res.json({
+        res.status(200).send({
             nickname: user.nickname,
             token: token,
             admin: user.admin

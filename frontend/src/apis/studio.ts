@@ -1,9 +1,10 @@
 import axios from "axios"
-import { CLIENT, STUDIO_API } from "constants/constants";
+import { CLIENT, STUDIO_API, API } from "constants/constants";
 
 // AI STUDIOS 토큰 생성 API
 export const generateClientToken = async () => {
-  const res = await axios.get(STUDIO_API + `/generateClientToken?appId=${CLIENT.appId}&userKey=${CLIENT.uuid}`);
+  // const res = await axios.get(STUDIO_API + `/generateClientToken?appId=${CLIENT.appId}&userKey=${CLIENT.uuid}`);
+  const res = await axios.get(API + `/studio?appId=${CLIENT.appId}&userKey=${CLIENT.uuid}`);
 
   console.log("generateClientToken: ", res.data);
   return res.data
@@ -11,7 +12,8 @@ export const generateClientToken = async () => {
 
 // AI STUDIOS 모델 목록 조회 API
 export const getModelList = async (token: string) => {
-  const res = await axios.post(STUDIO_API + '/getModelList', {
+  // const res = await axios.post(STUDIO_API + '/getModelList', {
+  const res = await axios.post(API + '/studio/getModelList', {
     appId: CLIENT.appId,
     clientHostname: CLIENT.clientHostname,
     isClientToken: CLIENT.isClientToken,
@@ -26,7 +28,8 @@ export const getModelList = async (token: string) => {
 
 // AI STUDIOS 영상 생성 API
 export const makeVideo = async ({token, text}:{token: string, text: string}) => {
-  const res = await axios.post(STUDIO_API + '/makeVideo', {
+  // const res = await axios.post(STUDIO_API + '/makeVideo', {
+  const res = await axios.post(API + 'studio/makeVideo', {
     appId: CLIENT.appId,
     clientHostname: CLIENT.clientHostname,
     isClientToken: CLIENT.isClientToken,
@@ -46,7 +49,8 @@ export const makeVideo = async ({token, text}:{token: string, text: string}) => 
 
 // AI STUDIOS 영상 작업 확인 API
 export const findProject = async ({token, videoKey}:{token: string, videoKey: string}) => {
-  const res = await axios.post(STUDIO_API + '/findProject', {
+  // const res = await axios.post(STUDIO_API + '/findProject', {
+  const res = await axios.post(API + '/studio/findProject', {
     key: videoKey,
     appId: CLIENT.appId,
     clientHostname: CLIENT.clientHostname,

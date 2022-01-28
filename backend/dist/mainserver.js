@@ -11,6 +11,7 @@ const mongo_connector_1 = require("./mongo-connector");
 const videoRouter_1 = __importDefault(require("./routes/videoRouter"));
 const userRouter_1 = __importDefault(require("./routes/userRouter"));
 const themeRouter_1 = __importDefault(require("./routes/themeRouter"));
+const studioRouter_1 = __importDefault(require("./routes/studioRouter"));
 // 메인서버 클래스
 class MainServer {
     constructor() {
@@ -27,6 +28,7 @@ class MainServer {
         this.app.use("/video", videoRouter_1.default);
         this.app.use("/user", userRouter_1.default);
         this.app.use("/theme", themeRouter_1.default);
+        this.app.use("/studio", studioRouter_1.default);
         this.app.get('/', (req, res) => {
             res.send('Hello World');
         });
