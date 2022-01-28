@@ -9,8 +9,6 @@ export const getUserinfo = async () => {
   const res = await axios.get(API + '/user/profile', { 
     headers: { 'x-access-token': checkAccessToken }
   })
-
-  console.log('getUserinfo: ', res)
   
   return res.data;
 }
@@ -27,8 +25,6 @@ export const login = async ({email, password}:{email: string, password: string})
     sessionStorage.setItem("accessToken", token);
   }
 
-  console.log('login: ', res)
-
   return res.data
 }
 
@@ -40,8 +36,6 @@ export const register = async (email: string, nickname: string, password: string
     password: password,
     admin: admin
   })
-
-  console.log('register: ', res)
 
   return res.data
 }

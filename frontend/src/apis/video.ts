@@ -18,7 +18,5 @@ export const postVideo = async (type: string, url: string, text: string, videoId
     selected: true
   })
 
-  console.log('postVideo: ', res)
-
   return res.data
 }

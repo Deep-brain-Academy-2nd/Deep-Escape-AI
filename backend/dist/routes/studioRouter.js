@@ -21,10 +21,13 @@ router.get('/', async (req, res) => {
 });
 // 영상 생성
 router.post('/makeVideo', async (req, res) => {
+    console.log('백엔드 안 영상생성');
+    console.log(req.body.appId);
+    console.log(req.body.clientHostname);
     try {
         const response = await axios_1.default.post(`https://dev.aistudios.com/api/odin/makeVideo`, {
             appId: req.body.appId,
-            clientHostname: req.body.appIdclientHostname,
+            clientHostname: req.body.clientHostname,
             isClientToken: req.body.isClientToken,
             platform: req.body.platform,
             sdk_v: req.body.sdk_v,

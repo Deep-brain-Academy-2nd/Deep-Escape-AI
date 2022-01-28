@@ -23,7 +23,7 @@ router.post('/makeVideo', async (req: Request, res: Response) => {
   try {
     const response = await axios.post(`https://dev.aistudios.com/api/odin/makeVideo`, {
       appId: req.body.appId,
-      clientHostname: req.body.appIdclientHostname,
+      clientHostname: req.body.clientHostname,
       isClientToken: req.body.isClientToken,
       platform: req.body.platform,
       sdk_v: req.body.sdk_v,

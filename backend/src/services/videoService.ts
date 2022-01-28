@@ -4,16 +4,12 @@ export class VideoService {
   // 영상 조회
   public async findOne(type: string, selected: boolean): Promise<Video> {
     const videoData: Video = await VideoModel.findOne({type: type, selected: selected});
-
-    console.log('findOne videoData: ', videoData)
     return videoData;
   }
 
   // 모든 영상 조회
   public async findAll(): Promise<Video> {
     const videoData: any = await VideoModel.find({});
-
-    console.log('findOne videoData: ', videoData)
     return videoData;
   }
 
@@ -29,7 +25,6 @@ export class VideoService {
     video.selected = false
 
     const videoData: Video = await VideoModel.findOneAndUpdate({ videoId: videoId }, video, { new: true });
-    console.log('update videoData: ', videoData)
     return videoData;
   }
 }

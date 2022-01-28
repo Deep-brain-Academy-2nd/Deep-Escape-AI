@@ -40,7 +40,6 @@ router.get('/videos', async (req: Request, res: Response) => {
 // 영상 생성 요청
 router.post('/', async (req: Request, res: Response) => {
   const videoService = new VideoService();
-  console.log('text: ', req.body.text)
 
   try{
     let video: Video = {
@@ -52,10 +51,8 @@ router.post('/', async (req: Request, res: Response) => {
     const result = await videoService.create(video);
 
     if(req.body.videoId){
-      console.log('생성 안의 수정으로 들어옴')
       await videoService.update(req.body.videoId)
     }
-    console.log(result);
     res.status(201).send('success');
   }catch(err) {
     console.log('error: ', err)
