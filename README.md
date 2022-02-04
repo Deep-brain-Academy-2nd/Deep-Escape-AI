@@ -2,7 +2,8 @@
 
 딥브레인AI 개인 프로젝트 - 방탈출 AI 소개 서비스
 
-[**웹 사이트 바로가기**](http://ec2-3-36-65-216.ap-northeast-2.compute.amazonaws.com/) 👈
+[**웹 사이트 바로가기**](http://ec2-13-209-248-100.ap-northeast-2.compute.amazonaws.com/) 👈
+- 매일 09:00 ~ 19:00 에만 이용 가능합니다!
 
 <br />
 
